@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package com.cczu.examples.hdfs.rpc;
+// 生成多个message文件
+option java_multiple_files = true;
+option java_package = "com.cczu.examples.hdfs.rpc.service";
+option java_outer_classname = "NameNodeServer";
+
+import "NameNodeRpcModel.proto";
+
+service NameNodeService{
+  rpc register(RegisterRequest) returns (RegisterResponse);
+  rpc heartbeat(HeartbeatRequest) returns (HeartbeatResponse);
+  rpc mkdir(MkdirRequest) returns (MkdirResponse);
+  rpc shutdown(ShutdownRequest) returns (ShutdownResponse);
+  rpc fetchEditsLog(FetchEditsLogRequest) returns (FetchEditsLogResponse);
+}
+
+
+
+

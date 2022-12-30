@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package com.cczu.examples.hdfs.rpc;
+// 生成多个message文件
+option java_multiple_files = true;
+option java_package = "com.cczu.examples.hdfs.rpc.model";
+option java_outer_classname = "NameNodeModel";
+message RegisterRequest{
+  string ip       = 1;
+  string hostname = 2;
+}
+message RegisterResponse{
+  int32 status = 1;
+}
+
+message HeartbeatRequest{
+  string ip       = 1;
+  string hostname = 2;
+}
+message HeartbeatResponse{
+  int32 status = 1;
+}
+
+message MkdirRequest{
+  string path = 1;
+}
+message MkdirResponse{
+  int32 status = 1;
+}
+
+message ShutdownRequest{
+  int32 code = 1;
+}
+message ShutdownResponse{
+  int32 status = 1;
+}
+
+message FetchEditsLogRequest{
+  int32 code = 1;
+}
+message FetchEditsLogResponse{
+  string editsLog = 1;
+}
+
+
