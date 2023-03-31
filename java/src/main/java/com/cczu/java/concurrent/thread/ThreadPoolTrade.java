@@ -13,6 +13,7 @@ public class ThreadPoolTrade implements Executor {
     private final AtomicInteger ctl = new AtomicInteger(0);
     private volatile int corePoolSize;
     private volatile int maxPoolSize;
+    private volatile int xxx;
     private final BlockingQueue<Runnable> workQueue;
 
     public ThreadPoolTrade(int corePoolSize, int maxPoolSize, BlockingQueue<Runnable> workQueue) {
